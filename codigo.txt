@@ -1,0 +1,37 @@
+CREATE TABLE PRODUCTOS (
+    CODIGO VARCHAR(5) PRIMARY KEY NOT NULL,
+    NOMBRE VARCHAR(20) NOT NULL,
+    Comision FLOAT NOT NULL
+);
+
+
+CREATE TABLE DETALLE_VENTA (
+    Nro INT AUTO_INCREMENT PRIMARY KEY,
+    Camion VARCHAR(5) NOT NULL,
+    Fecha DATE NOT NULL,
+    Carga CHAR(1) NOT NULL,
+    Producto VARCHAR(5) NOT NULL,
+    Cantidad INT NOT NULL,
+    Total FLOAT NOT NULL,
+    FOREIGN KEY (Producto) REFERENCES PRODUCTOS(CODIGO)
+);
+
+
+
+config
+    database.php
+controllers
+    productocontroller.php
+    excelcontroller.php
+models
+    productomodel.php
+    excelmodel.php
+templates
+    header.php
+index.php
+tabla.php (el archivo donde esta el diseño)
+dashboard.php
+
+
+
+
